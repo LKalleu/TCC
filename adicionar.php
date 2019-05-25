@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col s12 m6 push-m3">
     <h3 class="light center">Novo Cliente</h3>
-    <form class="" action="index.html" method="post">
+    <form class="" action="php_action/create.php" method="POST">
       <div class="input-field col s12">
         <input type="text" name="nome" id="nome" value="">
         <label for="nome">Nome</label>
@@ -40,16 +40,12 @@
         <label for="cep">Cep</label>
       </div>
       <div class="input-field col s12">
-        <select multiple>
-          <option value="" disabled selected>Escolha os produtos</option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select>
-        <label>Produtos Comprados</label>
+        <input type="text" name="prod_comprados" id="prod_comprados" value="">
+        <label for="prod_comprados">prod_comprados</label>
       </div>
 
-      <button type="submit" class="btn" name="button">Cadastrar</button>
+      <button type="submit" class="btn blue" name="btn-cadastrar">Cadastrar</button>
+      <a href="index.php" class="btn green" name="">Lista de Clientes</a>
     </form>
   </div>
 </div>
