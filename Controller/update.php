@@ -22,10 +22,10 @@ if (isset($_POST['btn-editar'])) {
 
   if (mysqli_query($connect, $sql)) {
     $_SESSION['mensagem'] = "Editado com sucesso!";
-    header('Location: ../index.php');
+    header('Location: ../View/devedores.php');
   }else {
     $_SESSION['mensagem'] = "Erro ao editar!";
-    header('Location: ../index.php');
+    header('Location: ../View/devedores.phpp');
   }
 
 }

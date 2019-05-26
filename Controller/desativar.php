@@ -12,10 +12,10 @@ if (isset($_POST['btn-desastivar'])) {
 
   if (mysqli_query($connect, $sql)) {
     $_SESSION['mensagem'] = "Desativado com sucesso!";
-    header('Location: ../index.php');
+    header('Location: ../View/devedores.php');
   }else {
     $_SESSION['mensagem'] = "Erro ao desativar!";
-    header('Location: ../index.php');
+    header('Location: ../View/devedores.php');
   }
 
 }

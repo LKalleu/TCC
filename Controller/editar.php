@@ -1,8 +1,8 @@
 <?php
 //Conxão
-include_once 'php_action/db_connect.php';
+include_once '../Model/db_connect.php';
 //Header
-include_once 'includes/header.php';
+include_once '../Includes/header.php';
 //Select
 if (isset($_GET['id'])) {
   $id = mysqli_escape_string($connect, $_GET['id']);
@@ -56,12 +56,12 @@ if (isset($_GET['id'])) {
       </div>
 
       <button type="submit" class="btn blue" name="btn-editar">Cadastrar</button>
-      <a href="index.php" class="btn green" name="">Lista de Clientes</a>
+      <a href="../View/devedores.php" class="btn green" name="">Lista de Clientes</a>
     </form>
   </div>
 </div>
 
 <?php
 //Footer
-  include_once 'includes/footer.php';
+  include_once '../Includes/footer.php';
 ?>
