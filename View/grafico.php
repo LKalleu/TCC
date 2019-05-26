@@ -23,10 +23,14 @@ include_once '../Includes/mensagem.php';
     var data = google.visualization.arrayToDataTable([
       ['Task', 'Hours per Day'],
       <?php
-      while ($dados = mysqli_fetch_array($resultado)) {
+      while ($dados = mysqli_fetch_array($resultado)) :
+        $fornecedorFK = $dados['fornecedor'];
+        $sql2 = "SELECT * FROM fornecedor WHERE idFornecedor = '$fornecedorFK'";
+        $resultado2 = mysqli_query($connect, $sql2);
+        while ($dados2 = mysqli_fetch_array($resultado2)):
       ?>
-      ['<?php echo $dados['fornecedor'] ?>', <?php echo $dados['quantidade'] ?>],
-      <?php  } ?>
+      ['<?php echo $dados2['nome']; endwhile; ?>', <?php echo $dados['quantidade']; ?>],
+      <?php  endwhile; ?>
     ]);
 
     var options = {

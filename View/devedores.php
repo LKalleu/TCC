@@ -17,7 +17,7 @@ include_once '../Includes/mensagem.php';
 <br>
 <div class="row">
   <div class="col s12 m6">
-    <h4 class="light center red-text">Em dívida</h4>
+    <h4 class="light center red-text">Devedores</h4>
     <table class="responsive-table z-depth-2 white">
       <thead>
         <tr>
@@ -67,7 +67,7 @@ include_once '../Includes/mensagem.php';
   <!-- TABELA DE DÍVIDAS PAGAS -->
 
   <div class="col s12 m6">
-    <h4 class="light center green-text">Dívidas Pagas</h4>
+    <h4 class="light center green-text">Clientes</h4>
     <table class="responsive-table z-depth-2 white">
       <thead>
         <tr>
@@ -80,9 +80,9 @@ include_once '../Includes/mensagem.php';
       <tbody>
         <?php
         $sql = "SELECT * FROM devedor";
-        $sqlProdutos = "SELECT * FROM produtos";
+
         $resultado = mysqli_query($connect, $sql);
-        $resultadoProdutos = mysqli_query($connect, $sqlProdutos);
+
 
 
         while($dados = mysqli_fetch_array($resultado)):
@@ -98,25 +98,30 @@ include_once '../Includes/mensagem.php';
 
 
         <!-- ADICIONAR PRODUTOS AO USUÁRIO -->
-        <div id="comprados<?php echo$dados['id']?>" class="modal">
+        <div id="comprados<?php echo$dados['id']?>" class="modal modal-fixed-footer">
           <div class="modal-content">
             <h4 class="center">Escolha os produtos</h4>
             <hr>
+            <br>
             <form class="col s12" action="../Controller/inserirComprados.php" method="POST">
-
-              <?php
-              while ($produtos = mysqli_fetch_array($resultadoProdutos)) {
-
-                //Selecionar Produtos na lista do Cliente
-                echo $produtos['nome']."<br>";
-              }
-               ?>
-
+              <div class="input-field col s12">
+                <select multiple>
+                  <option value="" disabled selected>Selecione</option>
+                <?php
+                $sqlProdutos = "SELECT * FROM produtos";
+                $resultadoProdutos = mysqli_query($connect, $sqlProdutos);
+                while ($produtos = mysqli_fetch_assoc($resultadoProdutos)) {
+                  ?>
+                  <option value=" <?php echo $produtos['idProduto'] ?> "> <?php echo $produtos['nome'] ?> </option>
+                <?php } ?>
+               </select>
+               <label>Escolha os produtos</label>
+              </div>
             </form>
           </div>
           <div class="modal-footer">
               <input type="hidden" name="id" value="<?php echo $dados['id'] ?>">
-              <button type="submit" name="btn-inserirComprados" class="btn-flat green-text">Sim</button>
+              <button type="submit" name="btn-inserirComprados" class="btn-flat green-text">Inserir Produtos</button>
               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
             </form>
           </div>
@@ -138,6 +143,9 @@ include_once '../Includes/mensagem.php';
 ?>
 
 <script type="text/javascript">
+$(document).ready(function() {
+  $('select').material_select();
+});
 
 $(document).ready(function(){
   var $contato = $("#contato");
