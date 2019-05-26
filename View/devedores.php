@@ -136,3 +136,16 @@ include_once '../Includes/mensagem.php';
 //Footer
   include_once '../Includes/footer.php';
 ?>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+  var $contato = $("#contato");
+  $contato.mask('(00) 0 0000-0000');
+});
+
+$(document).ready(function(){
+  var $cep = $("#cep");
+  $cep.mask('00000-000');
+});
+</script>

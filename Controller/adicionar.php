@@ -20,7 +20,7 @@
         <label for="senha">Senha</label>
       </div>
       <div class="input-field col s12">
-        <input type="text" name="contato" id="contato" value="">
+        <input type="text" name="contato" id="contato" value=""  maxlength="16">
         <label for="contato">Contato</label>
       </div>
       <div class="input-field col s12">
@@ -36,7 +36,7 @@
         <label for="numeracao">Numeração</label>
       </div>
       <div class="input-field col s12">
-        <input type="text" name="cep" id="cep" value="">
+        <input type="text" name="cep" id="cep" value=""  maxlength="9">
         <label for="cep">Cep</label>
       </div>
       <div class="input-field col s12">
@@ -58,5 +58,15 @@
 <script type="text/javascript">
 $(document).ready(function() {
   $('select').material_select();
+});
+
+$(document).ready(function(){
+  var $contato = $("#contato");
+  $contato.mask('(00) 0 0000-0000');
+});
+
+$(document).ready(function(){
+  var $cep = $("#cep");
+  $cep.mask('00000-000');
 });
 </script>
