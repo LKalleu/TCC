@@ -7,7 +7,7 @@ include_once '../Includes/header.php';
 include_once '../Includes/mensagem.php';
 ?>
 
-<h4 class="light center indigo-text">Total de Produtos Fornecidos: <?php $sqq = "SELECT SUM(quantidade) AS total FROM historico"; $query = mysqli_query($connect,$sqq); while($a = mysqli_fetch_array($query)){ echo $a['total']; } ?> </h4>
+<h4 class="light center indigo-text">Total de Produtos Adquiridos: <?php $sqq = "SELECT SUM(quantidade) AS total FROM historico"; $query = mysqli_query($connect,$sqq); while($a = mysqli_fetch_array($query)){ echo $a['total']; } ?> </h4>
 <?php
   $sql = "SELECT * FROM historico";
   $resultado = mysqli_query($connect, $sql);
