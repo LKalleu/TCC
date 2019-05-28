@@ -16,7 +16,7 @@ if (isset($_GET['id'])) {
 <div class="row">
   <div class="col s12 m6 push-m3">
     <h3 class="light center">Editar Cliente</h3>
-    <form class="" action="php_action/update.php" method="POST">
+    <form class="" action="update.php" method="POST">
       <input type="hidden" name="id" value="<?php echo $dados['id']; ?>">
       <div class="input-field col s12">
         <input type="text" name="nome" id="nome" value="<?php echo $dados['nome']; ?>">

@@ -2,7 +2,7 @@
 //Sessão
 session_start();
 // COnexão
-require_once 'db_connect.php';
+require_once '../Model/db_connect.php';
 
 if (isset($_POST['btn-editar'])) {
 

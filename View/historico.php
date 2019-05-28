@@ -18,7 +18,7 @@ include_once '../Includes/mensagem.php';
 <div class="row">
   <div class="col s12 m10 push-m1">
     <h4 class="light center blue-text">Histórico</h4>
-    <table class="striped z-depth-2 white">
+    <table class="centered z-depth-2 white">
       <thead>
         <tr>
           <th>Data</th>
@@ -37,16 +37,7 @@ include_once '../Includes/mensagem.php';
          ?>
         <tr>
           <td> <?php echo $dados['data'] ?> </td>
-          <td>
-             <?php
-                $produtoFK = $dados['produto'];
-                $sql2 = "SELECT * FROM produtos WHERE idProduto = '$produtoFK'";
-                $resultado2 = mysqli_query($connect, $sql2);
-                while ($dados2 = mysqli_fetch_array($resultado2)):
-              ?>
-             <?php echo $dados2['nome']; ?>
-           <?php endwhile; ?>
-           </td>
+          <td> <a href="#" class="btn red lighten-1">Relatório</a> </td>
            <?php
               $fornecedorFK = $dados['fornecedor'];
               $sql3 = "SELECT * FROM fornecedor WHERE idFornecedor = '$fornecedorFK'";
