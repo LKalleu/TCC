@@ -14,23 +14,23 @@ function clear($input) {
 
 }
 
-if (isset($_POST['btn-inserirComprados'])) {
-  $id = clear($_POST['id']);
-  $produtos = clear($_POST['produtos']);
-  $data = clear($_POST['data']);
-  $quantidade = clear($_POST['quantidade']);
+if (isset($_POST['btn-inserirFornecedor'])) {
+  $nome = clear($_POST['nome']);
+  $email = clear($_POST['email']);
+  $contato = clear($_POST['contato']);
+  $cpf = clear($_POST['cpf']);
 
-  $sql = "INSERT INTO comprados
-  (data, devedor, produto, quantidade)
+  $sql = "INSERT INTO fornecedor
+  (nome, email, contato, cpf)
   VALUES
-  ('$data','$id','$produtos','$quantidade')";
+  ('$nome','$email','$contato','$cpf')";
 
   if (mysqli_query($connect, $sql)) {
     $_SESSION['mensagem'] = "Cadastrado com sucesso!";
-    header('Location: ../View/devedores.php');
+    header('Location: ../View/fornecedores.php');
   }else {
     $_SESSION['mensagem'] = "Erro ao cadastrar!";
-    header('Location: ../View/devedores.php');
+    header('Location: ../View/fornecedores.php');
   }
 
 }

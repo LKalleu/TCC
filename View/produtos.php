@@ -17,7 +17,7 @@ include_once '../Includes/mensagem.php';
 <br>
 <div class="row">
   <div class="col s12 m10 push-m1">
-    <h4 class="light center blue-text">Histórico</h4>
+    <h4 class="light center blue-text">Produtos Cadastrados</h4>
     <table class="centered z-depth-2 white">
       <thead>
         <tr>

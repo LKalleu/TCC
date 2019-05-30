@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col s12 m6 push-m3">
     <h3 class="light center">Novo Cliente</h3>
-    <form class="" action="php_action/create.php" method="POST">
+    <form class="" action="create.php" method="POST">
       <div class="input-field col s12">
         <input type="text" name="nome" id="nome" value="">
         <label for="nome">Nome</label>

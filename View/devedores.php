@@ -83,8 +83,6 @@ include_once '../Includes/mensagem.php';
 
         $resultado = mysqli_query($connect, $sql);
 
-
-
         while($dados = mysqli_fetch_array($resultado)):
           if ($dados['prod_comprados'] >= 1) {
          ?>
@@ -93,39 +91,9 @@ include_once '../Includes/mensagem.php';
           <td> <?php echo $dados['email'] ?> </td>
           <td> <?php echo $dados['contato'] ?> </td>
           <td> <a href="../Controller/editar.php?id= <?php echo $dados['id'] ?>" class="btn-floating blue"><i class="material-icons">edit</i> </td>
-          <td> <a href="#comprados<?php echo $dados['id'] ?>" class="btn-floating purple darken-3 btn modal-trigger" name="btn-desativar"> <i class="material-icons">add</i> </a> </td>
+          <td> <a href="../Controller/adicionarComprados.php?id= <?php echo $dados['id'] ?>" class="btn-floating purple darken-3 btn modal-trigger" name="btn-desativar"> <i class="material-icons">add</i> </a> </td>
+          <td> <a href="#modal<?php echo $dados['id'] ?>" class="btn-floating green btn modal-trigger" name="btn-desativar"> <i class="material-icons">done</i> </a> </td>
         </tr>
-
-
-        <!-- ADICIONAR PRODUTOS AO USUÁRIO -->
-        <div id="comprados<?php echo$dados['id']?>" class="modal modal-fixed-footer">
-          <div class="modal-content">
-            <h4 class="center">Escolha os produtos</h4>
-            <hr>
-            <br>
-            <form class="col s12" action="../Controller/inserirComprados.php" method="POST">
-              <div class="input-field col s12">
-                <select multiple>
-                  <option value="" disabled selected>Selecione</option>
-                <?php
-                $sqlProdutos = "SELECT * FROM produtos";
-                $resultadoProdutos = mysqli_query($connect, $sqlProdutos);
-                while ($produtos = mysqli_fetch_assoc($resultadoProdutos)) {
-                  ?>
-                  <option value=" <?php echo $produtos['idProduto'] ?> "> <?php echo $produtos['nome'] ?> </option>
-                <?php } ?>
-               </select>
-               <label>Escolha os produtos</label>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-              <input type="hidden" name="id" value="<?php echo $dados['id'] ?>">
-              <button type="submit" name="btn-inserirComprados" class="btn-flat green-text">Inserir Produtos</button>
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
-            </form>
-          </div>
-        </div>
 
       <?php } endwhile;  ?>
       </tbody>
