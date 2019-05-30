@@ -40,18 +40,18 @@ include_once '../Includes/mensagem.php';
           <td> <?php echo $dados['email'] ?> </td>
           <td> <?php echo $dados['contato'] ?> </td>
           <td> <a href="../Controller/editar.php?id= <?php echo $dados['id'] ?>" class="btn-floating blue"><i class="material-icons">edit</i> </td>
-          <td> <a href="#modal<?php echo $dados['id'] ?>" class="btn-floating green btn modal-trigger" name="btn-desativar"> <i class="material-icons">done</i> </a> </td>
+          <td> <a href="#modal<?php echo $dados['id'] ?>" class="btn-floating orange darken-4 btn modal-trigger" name="btn-desativar"> <i class="material-icons">person_add_disabled</i> </a> </td>
         </tr>
 
         <!-- Modal Structure -->
         <div id="modal<?php echo$dados['id']?>" class="modal">
           <div class="modal-content">
             <h4>Opa!</h4>
-            <p>Tem certeza que deseja desativar este Cliente da tabela de Devedores ?</p>
+            <p>Tem certeza que deseja desativar este Cliente ?</p>
           </div>
           <div class="modal-footer">
 
-            <form class="" action="php_action/desativar.php" method="POST">
+            <form class="" action="../Controller/desativar.php" method="POST">
               <input type="hidden" name="id" value="<?php echo $dados['id'] ?>">
               <button type="submit" name="btn-desativar" class="btn-flat red-text">Sim</button>
               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
@@ -92,8 +92,24 @@ include_once '../Includes/mensagem.php';
           <td> <?php echo $dados['contato'] ?> </td>
           <td> <a href="../Controller/editar.php?id= <?php echo $dados['id'] ?>" class="btn-floating blue"><i class="material-icons">edit</i> </td>
           <td> <a href="../Controller/adicionarComprados.php?id= <?php echo $dados['id'] ?>" class="btn-floating purple darken-3 btn modal-trigger" name="btn-desativar"> <i class="material-icons">add</i> </a> </td>
-          <td> <a href="#modal<?php echo $dados['id'] ?>" class="btn-floating green btn modal-trigger" name="btn-desativar"> <i class="material-icons">done</i> </a> </td>
+          <td> <a href="#modal<?php echo $dados['id'] ?>" class="btn-floating orange darken-4 btn modal-trigger" name="btn-desativar"> <i class="material-icons">person_add_disabled</i> </a> </td>
         </tr>
+
+        <!-- Modal Structure -->
+        <div id="modal<?php echo$dados['id']?>" class="modal">
+          <div class="modal-content">
+            <h4>Opa!</h4>
+            <p>Tem certeza que deseja desativar este Cliente ?</p>
+          </div>
+          <div class="modal-footer">
+
+            <form class="" action="../Controller/desativar.php" method="POST">
+              <input type="hidden" name="id" value="<?php echo $dados['id'] ?>">
+              <button type="submit" name="btn-desativar" class="btn-flat red-text">Sim</button>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+            </form>
+          </div>
+        </div>
 
       <?php } endwhile;  ?>
       </tbody>
