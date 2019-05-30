@@ -1,18 +1,17 @@
 <?php
-//Conexão
+//Conxão
 include_once '../Model/db_connect.php';
 //Header
 include_once '../Includes/header.php';
-//Mensagem
-include_once '../Includes/mensagem.php';
+//Select
+if (isset($_GET['id'])) {
+  $id = mysqli_escape_string($connect, $_GET['id']);
+
+  $sql = "SELECT * FROM devedor WHERE id = '$id' ";
+  $resultado = mysqli_query($connect, $sql);
+  $dados = mysqli_fetch_array($resultado);
+}
 ?>
-
-<?php
-$sql = "SELECT * FROM devedor";
-
-$resultado = mysqli_query($connect, $sql);
-while($dados = mysqli_fetch_array($resultado)):
- ?>
 
 <div class="row">
   <div class="col s12 m6 push-m3">
@@ -43,7 +42,6 @@ while($dados = mysqli_fetch_array($resultado)):
       </div>
       <button type="submit" class="btn blue" name="btn-inserirComprados">Cadastrar</button>
       <a href="../View/devedores.php" class="btn green" name="">Lista de Clientes</a>
-    <?php endwhile;  ?>
     </form>
   </div>
 </div>
