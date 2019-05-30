@@ -6,6 +6,22 @@ include_once '../Includes/header.php';
 //Mensagem
 include_once '../Includes/mensagem.php';
 ?>
+<br>
+
+<div class="row container">
+  <nav class="">
+    <div class="nav-wrapper">
+      <form method="POST" id="form-pesquisa">
+        <div class="input-field">
+          <input id="pesquisa" type="search" required class="indigo darken-3 white-text" name="pesquisa" placeholder="Digite uma data, ex: 00/00/000">
+          <label class="label-icon" for="pesquisa"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+</div>
+
 
 <div class="fixed-action-btn horizontal">
 <a href="../Controller/adicionar.php" class="btn-floating btn-large red"><i class="large material-icons">add</i></a>
@@ -14,7 +30,6 @@ include_once '../Includes/mensagem.php';
 
 
 <!-- TABELA DE DÍVIDAS -->
-<br>
 <div class="row">
   <div class="col s12 m10 push-m1">
     <h4 class="light center blue-text">Histórico</h4>

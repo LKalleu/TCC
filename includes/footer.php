@@ -1,4 +1,4 @@
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
@@ -28,6 +28,11 @@
     $(document).ready(function(){
       var $cep = $("#cep");
       $cep.mask('00000-000');
+    });
+
+    $(document).ready(function(){
+      var $pesquisa = $("#pesquisa");
+      $pesquisa.mask('00/00/0000');
     });
     </script>
   </body>
