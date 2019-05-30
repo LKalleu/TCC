@@ -50,9 +50,3 @@ if (isset($_GET['id'])) {
 //Footer
   include_once '../Includes/footer.php';
 ?>
-
-<script type="text/javascript">
-$(document).ready(function() {
-  $('select').material_select();
-});
-</script>

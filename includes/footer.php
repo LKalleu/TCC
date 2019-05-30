@@ -10,6 +10,25 @@
       $('.modal').modal();
     });
     $(".dropdown-button").dropdown();
+
+    $(document).ready(function(){
+      var $contato = $("#contato");
+      $contato.mask('(00) 0 0000-0000');
+    });
+
+    $(document).ready(function(){
+      var $cpf = $("#cpf");
+      $cpf.mask('000.000.000-00');
+    });
+
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+
+    $(document).ready(function(){
+      var $cep = $("#cep");
+      $cep.mask('00000-000');
+    });
     </script>
   </body>
 </html>
