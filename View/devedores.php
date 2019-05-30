@@ -40,6 +40,7 @@ include_once '../Includes/mensagem.php';
           <td> <?php echo $dados['email'] ?> </td>
           <td> <?php echo $dados['contato'] ?> </td>
           <td> <a href="../Controller/editar.php?id= <?php echo $dados['id'] ?>" class="btn-floating blue"><i class="material-icons">edit</i> </td>
+          <td> <a href="../Controller/listaComprados.php?id= <?php echo $dados['id'] ?>" class="btn-floating green"><i class="material-icons">list</i> </td>
           <td> <a href="#modal<?php echo $dados['id'] ?>" class="btn-floating orange darken-4 btn modal-trigger" name="btn-desativar"> <i class="material-icons">person_add_disabled</i> </a> </td>
         </tr>
 
