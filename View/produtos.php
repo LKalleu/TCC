@@ -8,7 +8,49 @@ include_once '../Includes/mensagem.php';
 ?>
 
 <div class="fixed-action-btn horizontal">
-<a href="../Controller/adicionar.php" class="btn-floating btn-large red"><i class="large material-icons">add</i></a>
+<a href="#inserirProduto" class="btn-floating btn-large red modal-trigger"><i class="large material-icons">add</i></a>
+</div>
+
+<!-- Modal Alterar Preço -->
+<div id="inserirProduto" class="modal">
+  <div class="modal-content">
+    <h4 class="light center">Cadastrar Produto</h4>
+    <div class="row">
+      <form class="col s12" action="" method="POST">
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input type="text" id="nome" name="nome">
+            <label for="nome">Nome</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <select>
+              <option value="" disabled selected>Escolha o tipo de produto</option>
+              <?php
+              $sql = "SELECT * FROM categoria";
+              $resultado = mysqli_query($connect, $sql);
+              while ($categoria = mysqli_fetch_assoc($resultado)) {
+                ?>
+              <option value="<?php echo $categoria['idCategoria'] ?>"><?php echo $categoria['descricao'] ?></option>
+                <?php }; ?>
+            </select>
+            <label>Categoria</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input type="text" id="preco" name="preco">
+            <label for="preco">Preço</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input type="text" id="marca" name="marca">
+            <label for="marca">Marca</label>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn-flat blue-text" name="btn-inserirProduto">Atualizar</button>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+  </div>
+  </form>
 </div>
 
 
