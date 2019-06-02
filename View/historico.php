@@ -50,14 +50,15 @@ include_once '../Includes/mensagem.php';
             <label for="quantidade">Quantidade</label>
           </div>
           <div class="input-field col s12">
-            <input placeholder="Ex: Maçã" id="produtos" type="text" name="produtos" class="validate">
+            <textarea placeholder="Ex:  - Maçã" id="produtos" type="text" name="produtos" class="materialize-textarea" data-length="300"></textarea>
             <label for="produtos">Produtos</label>
           </div>
         </div>
-      </form>
     </div>
   </div>
   <div class="modal-footer">
+    <button type="submit" class="btn-flat blue-text" name="cadastrarHistorico">Cadastrar</button>
+    </form>
     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
   </div>
 </div>
