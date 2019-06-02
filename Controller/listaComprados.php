@@ -24,8 +24,8 @@ if (isset($_GET['id'])) {
     <table class="centered z-depth-2 white">
       <thead>
         <tr>
-          <th>Nome</th>
-          <th>Preço</th>
+          <th>Data</th>
+          <th>Produtos</th>
           <th>Quantidade Total</th>
         </tr>
       </thead>
