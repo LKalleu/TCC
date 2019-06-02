@@ -32,8 +32,11 @@ include_once '../Includes/mensagem.php';
         $sql = "SELECT * FROM devedor";
         $resultado = mysqli_query($connect, $sql);
 
-        while($dados = mysqli_fetch_array($resultado)):
-          if ($dados['prod_comprados'] == NULL) {
+
+
+        while($dados = mysqli_fetch_array($resultado)){
+          if ($dados['status'] == 1) {
+          if ($dados['prod_comprados'] >= 1) {
          ?>
         <tr>
           <td> <?php echo $dados['nome'] ?> </td>
@@ -59,7 +62,7 @@ include_once '../Includes/mensagem.php';
             </form>
           </div>
         </div>
-      <?php }; endwhile; ?>
+      <?php } } } ?>
       </tbody>
     </table>
   </div>
@@ -84,8 +87,9 @@ include_once '../Includes/mensagem.php';
 
         $resultado = mysqli_query($connect, $sql);
 
-        while($dados = mysqli_fetch_array($resultado)):
-          if ($dados['prod_comprados'] >= 1) {
+        while($dados = mysqli_fetch_array($resultado)){
+          if ($dados['status'] == 1) {
+          if ($dados['prod_comprados'] == NULL) {
          ?>
         <tr>
           <td> <?php echo $dados['nome'] ?> </td>
@@ -112,7 +116,7 @@ include_once '../Includes/mensagem.php';
           </div>
         </div>
 
-      <?php } endwhile;  ?>
+      <?php } } } ?>
       </tbody>
 
     </table>

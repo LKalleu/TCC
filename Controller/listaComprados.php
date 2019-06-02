@@ -26,19 +26,20 @@ if (isset($_GET['id'])) {
         <tr>
           <th>Nome</th>
           <th>Preço</th>
+          <th>Quantidade Total</th>
         </tr>
       </thead>
 
       <tbody class="">
         <tr>
            <?php
-              $produtosFK = $dados['produto'];
-              $sql3 = "SELECT * FROM produtos WHERE idProduto = '$produtosFK'";
+              $sql3 = "SELECT * FROM comprados WHERE devedor = '$id'";
               $resultado3 = mysqli_query($connect, $sql3);
               while($dados3 = mysqli_fetch_array($resultado3)):
             ?>
-          <td> <?php echo $dados3['nome'] ?> </td>
-          <td> <?php echo $dados3['preco'] ?> </td>
+          <td> <?php echo $dados3['data'] ?> </td>
+          <td> <?php echo $dados3['produtos'] ?> </td>
+          <td> <?php echo $dados3['quantidade'] ?> </td>
         <?php endwhile; ?>
         </tr>
       </tbody>
