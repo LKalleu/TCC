@@ -23,8 +23,43 @@ include_once '../Includes/mensagem.php';
 </div>
 
 
-<div class="fixed-action-btn horizontal">
-<a href="../Controller/adicionar.php" class="btn-floating btn-large red"><i class="large material-icons">add</i></a>
+<!-- Modal Trigger -->
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large red modal-trigger" href="#modal1">
+        <i class="large material-icons">add</i>
+      </a>
+    </div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4 class="light center">Cadastrar no Histórico</h4>
+    <div class="row">
+      <form class="col s12" action="" method="POST">
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="00/00/0000" id="data" type="text" name="data" class="validate">
+            <label for="data">Data de Recebimento</label>
+          </div>
+          <div class="input-field col s12">
+            <input placeholder="Digite o nome do fornecedor" id="fornecedor" type="text" name="fornecedor" class="validate">
+            <label for="fornecedor">Fornecedor</label>
+          </div>
+          <div class="input-field col s12">
+            <input placeholder="Digite a quantidade de itens" id="quantidade" type="text" name="quantidade" class="validate">
+            <label for="quantidade">Quantidade</label>
+          </div>
+          <div class="input-field col s12">
+            <input placeholder="Ex: Maçã" id="produtos" type="text" name="produtos" class="validate">
+            <label for="produtos">Produtos</label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+  </div>
 </div>
 
 
@@ -52,7 +87,7 @@ include_once '../Includes/mensagem.php';
          ?>
         <tr>
           <td> <?php echo $dados['data'] ?> </td>
-          <td> <a href="#" class="btn red lighten-1">Relatório</a> </td>
+          <td> <?php echo $dados['produto'] ?> </td>
            <?php
               $fornecedorFK = $dados['fornecedor'];
               $sql3 = "SELECT * FROM fornecedor WHERE idFornecedor = '$fornecedorFK'";
