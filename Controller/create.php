@@ -23,12 +23,11 @@ if (isset($_POST['btn-cadastrar'])) {
   $bairro = clear($_POST['bairro']);
   $numeracao = clear($_POST['numeracao']);
   $cep = clear($_POST['cep']);
-  $prod_comprados = clear($_POST['prod_comprados']);
 
   $sql = "INSERT INTO devedor
-  (nome,email,senha,contato,rua,bairro,numeracao,cep,prod_comprados)
+  (nome,email,senha,contato,rua,bairro,numeracao,cep)
   VALUES
-  ('$nome','$email','$senha','$contato','$rua','$bairro','$numeracao','$cep','$prod_comprados')";
+  ('$nome','$email','$senha','$contato','$rua','$bairro','$numeracao','$cep')";
 
   if (mysqli_query($connect, $sql)) {
     $_SESSION['mensagem'] = "Cadastrado com sucesso!";

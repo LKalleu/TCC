@@ -50,10 +50,6 @@ if (isset($_GET['id'])) {
         <input type="text" name="cep" id="cep" value="<?php echo $dados['cep']; ?>">
         <label for="cep">Cep</label>
       </div>
-      <div class="input-field col s12">
-        <input type="text" name="prod_comprados" id="prod_comprados" value="<?php echo $dados['prod_comprados']; ?>">
-        <label for="prod_comprados">prod_comprados</label>
-      </div>
 
       <button type="submit" class="btn blue" name="btn-editar">Cadastrar</button>
       <a href="../View/devedores.php" class="btn green" name="">Lista de Clientes</a>

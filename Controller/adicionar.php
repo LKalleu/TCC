@@ -39,10 +39,6 @@
         <input type="text" name="cep" id="cep" value=""  maxlength="9">
         <label for="cep">Cep</label>
       </div>
-      <div class="input-field col s12">
-        <input type="text" name="prod_comprados" id="prod_comprados" value="">
-        <label for="prod_comprados">prod_comprados</label>
-      </div>
 
       <button type="submit" class="btn blue" name="btn-cadastrar">Cadastrar</button>
       <a href="../View/devedores.php" class="btn green" name="">Lista de Clientes</a>

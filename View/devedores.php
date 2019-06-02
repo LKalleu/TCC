@@ -36,7 +36,6 @@ include_once '../Includes/mensagem.php';
 
         while($dados = mysqli_fetch_array($resultado)){
           if ($dados['status'] == 1) {
-          if ($dados['prod_comprados'] >= 1) {
          ?>
         <tr>
           <td> <?php echo $dados['nome'] ?> </td>
@@ -62,7 +61,7 @@ include_once '../Includes/mensagem.php';
             </form>
           </div>
         </div>
-      <?php } } } ?>
+      <?php  } } ?>
       </tbody>
     </table>
   </div>
@@ -88,35 +87,34 @@ include_once '../Includes/mensagem.php';
         $resultado = mysqli_query($connect, $sql);
 
         while($dados = mysqli_fetch_array($resultado)){
-          if ($dados['status'] == 1) {
-          if ($dados['prod_comprados'] == NULL) {
+          if ($dados['status'] == 2) {
          ?>
         <tr>
           <td> <?php echo $dados['nome'] ?> </td>
           <td> <?php echo $dados['email'] ?> </td>
           <td> <?php echo $dados['contato'] ?> </td>
           <td> <a href="../Controller/editar.php?id= <?php echo $dados['id'] ?>" class="btn-floating blue"><i class="material-icons">edit</i> </td>
-          <td> <a href="../Controller/adicionarComprados.php?id= <?php echo $dados['id'] ?>" class="btn-floating purple darken-3 btn modal-trigger" name="btn-desativar"> <i class="material-icons">add</i> </a> </td>
-          <td> <a href="#modal<?php echo $dados['id'] ?>" class="btn-floating orange darken-4 btn modal-trigger" name="btn-desativar"> <i class="material-icons">person_add_disabled</i> </a> </td>
+          <td> <a href="../Controller/adicionarComprados.php?id= <?php echo $dados['id'] ?>" class="btn-floating purple darken-3 btn modal-trigger"> <i class="material-icons">add</i> </a> </td>
+          <td> <a href="#modal<?php echo $dados['id'] ?>" class="btn-floating green btn modal-trigger" name="btn-ativar"> <i class="material-icons">done</i> </a> </td>
         </tr>
 
         <!-- Modal Structure -->
         <div id="modal<?php echo$dados['id']?>" class="modal">
           <div class="modal-content">
             <h4>Opa!</h4>
-            <p>Tem certeza que deseja desativar este Cliente ?</p>
+            <p>Tem certeza que deseja ativar este Cliente ?</p>
           </div>
           <div class="modal-footer">
 
-            <form class="" action="../Controller/desativar.php" method="POST">
+            <form class="" action="../Controller/ativar.php" method="POST">
               <input type="hidden" name="id" value="<?php echo $dados['id'] ?>">
-              <button type="submit" name="btn-desativar" class="btn-flat red-text">Sim</button>
+              <button type="submit" name="btn-ativar" class="btn-flat red-text">Sim</button>
               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
             </form>
           </div>
         </div>
 
-      <?php } } } ?>
+      <?php  } } ?>
       </tbody>
 
     </table>
