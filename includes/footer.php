@@ -34,6 +34,11 @@
       var $pesquisa = $("#pesquisa");
       $pesquisa.mask('00/00/0000');
     });
+
+    $(document).ready(function(){
+      var $preco = $("#preco");
+      $preco.mask('#.##0,00', {reverse: true});
+    });
     </script>
   </body>
 </html>

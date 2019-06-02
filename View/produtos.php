@@ -87,7 +87,7 @@ include_once '../Includes/mensagem.php';
            ?>
          <td> <?php echo $dados3['descricao'] ?> </td>
        <?php endwhile; ?>
-          <td> <?php echo $dados['preco'] ?> <a href="#modal<?php echo $dados['idProduto'] ?>" class="green-text modal-trigger"><i class="tiny material-icons">edit</i></a> </td>
+          <td> R$ <?php echo $dados['preco'] ?> <a href="#modal<?php echo $dados['idProduto'] ?>" class="green-text modal-trigger"><i class="tiny material-icons">edit</i></a> </td>
           <td> <?php echo $dados['marca'] ?> </td>
         </tr>
 
