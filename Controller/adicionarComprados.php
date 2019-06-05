@@ -22,17 +22,10 @@ if (isset($_GET['id'])) {
         <label for="data">Data</label>
       </div>
       <input type="hidden" name="id" value="<?php echo $dados['id'] ?>">
-
-      <div class="">
-        <?php
-        $sqlProdutos = "SELECT * FROM produtos";
-        $resultadoProdutos = mysqli_query($connect, $sqlProdutos);
-        while ($produtos = mysqli_fetch_assoc($resultadoProdutos)) {
-          ?>
-          <input type="checkbox" name="produtos" id="<?php echo $produtos['idProduto'] ?>" value=" <?php echo $produtos['idProduto'] ?> ">
-          <label for="<?php echo $produtos['idProduto'] ?>"><?php echo $produtos['nome'] ?></label>
-        <?php }; ?>
-     </div>
+      <div class="input-field col s12">
+        <textarea name="produtos" id="produtos" class="materialize-textarea" data-length="300" placeholder="Ex:  - Maçã"></textarea>
+        <label for="produtos">Produtos</label>
+      </div>
       <div class="input-field col s12">
         <input type="text" name="quantidade" id="quantidade" value="">
         <label for="quantidade">Quantidade</label>
