@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #2196f3;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <rect id="Corpo" class="cls-1" x="834" y="380" width="254" height="264" rx="10" ry="10"/>
+  <image id="Cabeça_copiar_2" data-name="Cabeça copiar 2" x="879" y="174" width="162" height="162" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKIAAACiCAYAAADC8hYbAAAFDUlEQVR4nO3dzW4bVQCG4S9uKQoECRrCX9k0JMAeWHARLa2gLLiDLGFRxA0goAtYQHsDpCz4aXsfICTWUVZF3SCxaKSKIBF0nDkkjh1ixzNzvnPO+0iRIjuxI3+vLM2MFC9cvPlQE5yTdKX5elvSS81twKx2JN2X9KukO5LuSdo9+hiTQrwq6QtJa7zk6MCWpI8l/XT4oQeHvj8j6fPmB4gQXQlt/di0diY+x9lDT/appOu8/OhJbC28O/73jvgeESKB6017wxDDQciXrIBEvgoNhhCvSXqZFZDIBUnvD5pTNEBKV0KIbzEBEnszhPgCKyCxF8Ppm8dZYXbPP7mg25cXdfHpwVS/u/XnP/rg3iP98Whv7D7sH6xgRrNGGKw9M9Dtdxb17OLC2H0YvbKCKZwmQmI8GSHOYJ4II2KcjBCn1EaEUYhxkxhHEOIU2owwWifGEYR4ghDhZssRRsR4gBD/R4xwtYMII2LcR4jH6CPCiBgJcaI+I4xqj5EQj0gRYVRzjIR4SMoIo1pjJMSGQ4RRjTESolmEUYxxuZIYqw/xuSf8IozWm8uBNcRYdYghwjC0Y4RRLTFWG2IOEUY1xFhliDlFGJUeY3Uh5hhhVHKMVYWYc4RRqTFWE2IJEUYlxlhFiCVFGJUWY/EhlhhhVFKMRYdYcoTRMMbL+cdY7ELDKyaFRxitn88/xiJXihG+UkGEUe4xFrdUjRFGOcdY1Fo1RxjlGmMxixHhgRxjLGI1IhyXW4zZL0eEx8spxqzXI8KT5RJjtgsS4fRijOeNY8xyxRUinFmI8TvjGLNbcqW5bEeEs3OOMas1iXB+rjFmsygRtscxxixWJcL2ucVovywRdscpRut1ibB7LjHaLkyE/XGI0XJlIuxf6hjtlibCdFJegbFae6X5h0hEmM6riWK0WTxGGD6DBGmliNFidSL003eMyZcnQl99xph0fSL011eMyQogwnz0EWOSCogwP13H2HsJRJivLmPstQYizF9XMfZWRPjMECIsQ4hx81K7MfZSRYgwXLYjwnK8ttxujJ2XQYTlajPGTusgwvK1FWNnhRBhPdqIsZNKiLA+88bYeilEWK95Ymy1FiLEaWNsrRgiRHSaGFuphghxVIjx20uLY7cfZ+5yhldMiBATvL48fRNz1RMjXCdCzOnUBREh2nSqiogQbZu5JCJEF2aqiQjRlamLIkJ0aeqqiBBdmrosIkSXqAsWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWCBEWzkp6KOmpk/6Y1Vs7Y7cBLdkN74gPeDWR2IMQ4m+sgMR+DiHeZQUkdjeE+L2k+yyBRH4PDQ62N5Z2JX3ECkjkw+2Npb+Gp2+2N5bCu+INlkDPbjTtjZxH/ETS1yyBnnzTNDe0sLe3N/K0q7d23pX0maQ1FkEHtkKA2xtLPxx+6LEQtR/jOUnXJF2V9IakC5IeG/tB4GR/Nwckv0i6Ew5MmuOSA5L+BdLT+aviKxZdAAAAAElFTkSuQmCC"/>
+  <rect id="Mesa" class="cls-1" x="389" y="512" width="1143" height="490" rx="20" ry="20"/>
+  <rect id="Mesa_copiar" data-name="Mesa copiar" class="cls-1" x="101" y="716" width="253" height="286" rx="20" ry="20"/>
+  <rect id="Caixa" class="cls-1" x="1185" y="336" width="254" height="176" rx="10" ry="10"/>
+  <rect id="Caixa-2" data-name="Caixa" class="cls-1" x="1235" y="255" width="155" height="88" rx="10" ry="10"/>
+</svg>
