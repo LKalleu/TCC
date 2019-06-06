@@ -1,3 +1,6 @@
+<?php
+  session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -27,7 +30,7 @@
       <li><a href="../View/devedores.php" class="indigo-text">DEVEDORES</a></li>
       <li><a href="../View/fornecedores.php" class="indigo-text">FORNECEDORES</a></li>
       <li><a href="../View/grafico.php" class="indigo-text">GRÁFICO</a></li>
-      <li><a href="#" class="red-text">SAIR</a></li>
+      <li><a href="../Controller/sair.php" class="red-text">SAIR</a></li>
     </ul>
 
     <div class="navbar-fixed">

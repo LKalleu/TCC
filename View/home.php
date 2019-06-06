@@ -14,8 +14,8 @@ include_once '../Includes/mensagem.php';
 
 <div class="row" style="padding: 10px">
   <div class="col s12 m6 center-align">
-    <h4 class="light" style="margin-top: 20%; border: 5px solid #2196f3; border-radius: 10px;">Mercearia São José</h4>
-    <p class="" style="border: 3px solid #2196f3; border-radius: 10px;">Local:
+    <h4 class="light z-depth-2" style="margin-top: 20%; border: 5px solid #2196f3; border-radius: 10px;">Mercearia São José</h4>
+    <p class="z-depth-2" style="border: 3px solid #2196f3; border-radius: 10px;">Local:
       <br>
       Contato:
       <br>
@@ -23,7 +23,7 @@ include_once '../Includes/mensagem.php';
       <br>
     </p>
   </div>
-  <div class="col s12 m6 white" style="border: 10px solid #2196f3; border-radius: 10px;">
+  <div class="col s12 m6 white z-depth-2" style="border: 10px solid #2196f3; border-radius: 10px;">
     <img src="../Public/img/homeimage.png" alt="" width="100%">
   </div>
 </div>
