@@ -21,9 +21,10 @@ if (isset($_POST['btn-inserirComprados'])) {
   $quantidade = clear($_POST['quantidade']);
 
   $sql = "INSERT INTO comprados
-  (data, devedor, produto, quantidade)
+  (data, devedor, produtos, quantidade)
   VALUES
   ('$data','$id','$produtos','$quantidade')";
+
 
   if (mysqli_query($connect, $sql)) {
     $_SESSION['mensagem'] = "Cadastrado com sucesso!";

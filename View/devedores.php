@@ -41,9 +41,9 @@ include_once '../Includes/mensagem.php';
           <td> <?php echo $dados['nome'] ?> </td>
           <td> <?php echo $dados['email'] ?> </td>
           <td> <?php echo $dados['contato'] ?> </td>
-          <td> <a href="../Controller/editar.php?id= <?php echo $dados['id'] ?>" class="btn-floating blue"><i class="material-icons">edit</i> </td>
-          <td> <a href="../Controller/listaComprados.php?id= <?php echo $dados['id'] ?>" class="btn-floating green"><i class="material-icons">list</i> </td>
-          <td> <a href="#modal<?php echo $dados['id'] ?>" class="btn-floating orange darken-4 btn modal-trigger" name="btn-desativar"> <i class="material-icons">person_add_disabled</i> </a> </td>
+          <td> <a href="../Controller/editar.php?id= <?php echo $dados['id'] ?>" class="btn-floating blue tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Informações"><i class="material-icons">edit</i> </td>
+          <td> <a href="../Controller/listaComprados.php?id= <?php echo $dados['id'] ?>" class="btn-floating green tooltipped" data-position="bottom" data-delay="50" data-tooltip="Lista de Produtos"><i class="material-icons">list</i> </td>
+          <td> <a href="#modal<?php echo $dados['id'] ?>" class="btn-floating orange darken-4 btn modal-trigger tooltipped" name="btn-desativar" data-position="bottom" data-delay="50" data-tooltip="Desativar Pessoa"> <i class="material-icons">person_add_disabled</i> </a> </td>
         </tr>
 
         <!-- Modal Structure -->
@@ -93,9 +93,9 @@ include_once '../Includes/mensagem.php';
           <td> <?php echo $dados['nome'] ?> </td>
           <td> <?php echo $dados['email'] ?> </td>
           <td> <?php echo $dados['contato'] ?> </td>
-          <td> <a href="../Controller/editar.php?id= <?php echo $dados['id'] ?>" class="btn-floating blue"><i class="material-icons">edit</i> </td>
-          <td> <a href="../Controller/adicionarComprados.php?id= <?php echo $dados['id'] ?>" class="btn-floating purple darken-3 btn modal-trigger"> <i class="material-icons">add</i> </a> </td>
-          <td> <a href="#modal<?php echo $dados['id'] ?>" class="btn-floating green btn modal-trigger" name="btn-ativar"> <i class="material-icons">done</i> </a> </td>
+          <td> <a href="../Controller/editar.php?id= <?php echo $dados['id'] ?>" class="btn-floating blue tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Informações"><i class="material-icons">edit</i> </td>
+          <td> <a href="../Controller/adicionarComprados.php?id= <?php echo $dados['id'] ?>" class="btn-floating purple darken-3 btn modal-trigger tooltipped" data-position="bottom" data-delay="50" data-tooltip="Adicionar Produtos"> <i class="material-icons">add</i> </a> </td>
+          <td> <a href="#modal<?php echo $dados['id'] ?>" class="btn-floating green btn modal-trigger tooltipped" name="btn-ativar" data-position="bottom" data-delay="50" data-tooltip="Ativar Pessoa"> <i class="material-icons">done</i> </a> </td>
         </tr>
 
         <!-- Modal Structure -->

@@ -43,6 +43,9 @@
     $(document).ready(function() {
       $('input#input_text, textarea#textarea1').characterCounter();
     });
+    $(document).ready(function(){
+      $('.tooltipped').tooltip({delay: 50});
+    });
     </script>
   </body>
 </html>

@@ -111,7 +111,7 @@ if (isset($_POST['btn-entrar'])) {
     <div class="row">
       <h4 class="center light">Mercearia São José</h4>
     </div>
-    <form class="" action=" <?php echo $_SERVER['PHP_SELF']; ?> " method="POST">
+    <form class="" action="View/home.php" method="POST">
       <div class="row">
         <div class="col s10 offset-s1">
           <input placeholder="E-Mail" type="email" class="validate" name="email">
@@ -122,15 +122,6 @@ if (isset($_POST['btn-entrar'])) {
         <button type="submit" name="btn-entrar" class="btn col s10 offset-s1 indigo">Entrar</button>
       </div>
     </form>
-  </div>
-  <div class="row">
-    <?php
-    if (!empty($erros)) {
-      foreach ($erros as $erro) {
-        echo $erro;
-      };
-    };
-    ?>
   </div>
 </div>
 
