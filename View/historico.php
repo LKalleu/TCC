@@ -11,10 +11,10 @@ include_once '../Includes/mensagem.php';
 <div class="row container">
   <nav class="">
     <div class="nav-wrapper">
-      <form method="POST" id="form-pesquisa">
+      <form method="POST" action="../Controller/pesquisar.php">
         <div class="input-field">
-          <input id="pesquisa" type="search" required class="indigo darken-3 white-text" name="pesquisa" placeholder="Digite uma data, ex: 00/00/000">
-          <label class="label-icon" for="pesquisa"><i class="material-icons">search</i></label>
+          <input id="pesquisar" type="search" required class="indigo darken-3 white-text" name="pesquisar" placeholder="Digite uma data, ex: 00/00/000">
+          <label class="label-icon" for="pesquisar"><i class="material-icons">search</i></label>
           <i class="material-icons">close</i>
         </div>
       </form>
