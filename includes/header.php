@@ -27,6 +27,7 @@
 
     <ul id="dropdown2" class="dropdown-content" style="margin-top:64px">
       <li><a href="../View/devedores.php" class="indigo-text">DEVEDORES</a></li>
+      <li><a href="../View/funcionarios.php" class="indigo-text">FUNCIONÁRIOS</a></li>
       <li><a href="../View/fornecedores.php" class="indigo-text">FORNECEDORES</a></li>
       <li><a href="../View/grafico.php" class="indigo-text">GRÁFICO</a></li>
       <li><a href="../login.php" class="red-text">SAIR</a></li>
