@@ -16,6 +16,16 @@ if (isset($_GET['id'])) {
 }
 ?>
 
+<?php
+if (isset($_GET['id'])) {
+  $id = mysqli_escape_string($connect, $_GET['id']);
+
+  $sql2 = "SELECT * FROM devedor WHERE id = '$id' ";
+  $resultado2 = mysqli_query($connect, $sql2);
+  $dados2 = mysqli_fetch_array($resultado2);
+}
+ ?>
+
 <!-- TABELA DE DÍVIDAS -->
 <br>
 <div class="row">
@@ -27,7 +37,6 @@ if (isset($_GET['id'])) {
           <th>Data</th>
           <th>Produtos</th>
           <th>Quantidade Total</th>
-          <th>Ações</th>
         </tr>
       </thead>
 
@@ -41,22 +50,14 @@ if (isset($_GET['id'])) {
           <td> <?php echo $dados3['data'] ?> </td>
           <td> <?php echo $dados3['produtos'] ?> </td>
           <td> <?php echo $dados3['quantidade'] ?> </td>
-          <?php
-          if (isset($_GET['id'])) {
-            $id = mysqli_escape_string($connect, $_GET['id']);
-
-            $sql2 = "SELECT * FROM devedor WHERE id = '$id' ";
-            $resultado2 = mysqli_query($connect, $sql2);
-            $dados2 = mysqli_fetch_array($resultado2);
-          }
-           ?>
-          <td> <a href="adicionarComprados.php?id= <?php echo $dados2['id'] ?>" class="btn-floating purple darken-3 btn modal-trigger tooltipped" data-position="bottom" data-delay="50" data-tooltip="Adicionar Produtos"> <i class="material-icons">add</i> </a> </td>
+          <td>  </td>
+          </tr>
         <?php endwhile; ?>
-        </tr>
       </tbody>
     </table>
     <br>
     <a href="../View/devedores.php" class="btn green" name="">Lista de Clientes</a>
+    <a href="adicionarComprados.php?id= <?php echo $dados2['id'] ?>" class="purple darken-3 btn"> Adicionar Produtos </a>
   </div>
 </div>
 

@@ -51,7 +51,7 @@ if (isset($_GET['id'])) {
         <label for="cep">Cep</label>
       </div>
 
-      <button type="submit" class="btn blue" name="btn-editar">Cadastrar</button>
+      <button type="submit" class="btn blue" name="btn-editar">Atualizar</button>
       <a href="../View/devedores.php" class="btn green" name="">Lista de Clientes</a>
     </form>
   </div>

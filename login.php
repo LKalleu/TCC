@@ -6,33 +6,6 @@ include_once 'Includes/mensagem.php';
 //Sessão
 //session_start();
 
-//Botão enviar
-if (isset($_POST['btn-entrar'])) {
-  $erros = array();
-  $email = mysqli_escape_string($connect, $_POST['email']);
-  $senha = mysqli_escape_string($connect, $_POST['senha']);
-
-  if (empty($email) or empty($senha)) {
-    $erros[] = "<div class='orange col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3'> O campo login/senha precisa ser preenchido!</div>";
-  }else{
-    $sql = "SELECT email FROM usuario WHERE email = '$email'";
-    $resultado = mysqli_query($connect, $sql);
-    if (mysqli_num_rows($resultado) > 0) {
-      $sql = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
-      $resultado = mysqli_query($connect, $sql);
-      if (mysqli_num_rows($resultado) == 1) {
-        $dados = mysqli_fetch_arrray($resultado);
-        $_SESSION['logado'] = true;
-        $_SESSION['id_usuario'] = $dados['idUsuario'];
-        header('View/home.php');
-      }else{
-          $erros = "<div class='red lighten-1 col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3'> Usuário e Senha não conferem!</div><";
-        }
-    }else{
-          $erros[] = "<div class='red col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3'> Usuário inexistente!</div>";
-        }
-  }
-}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
