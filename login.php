@@ -4,7 +4,35 @@ include_once 'Model/db_connect.php';
 //Mensagem
 include_once 'Includes/mensagem.php';
 //Sessão
-//session_start();
+
+if (isset($_POST['btn-entrar'])) {
+  $erros = array();
+  $email = mysqli_escape_string($connect, $_POST['email']);
+  $senha = mysqli_escape_string($connect, $_POST['senha']);
+
+  if (empty($email) or empty($senha)) {
+    $erros[] ="O Campo login/senha precisa ser preenchido!";
+  }else{
+    $sql = "SELECT email FROM usuario WHERE email = '$email'";
+    $resultado = mysqli_query($connect, $sql);
+
+    if (mysqli_num_rows($resultado) > 0) {
+      $sql = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
+      $resultado = mysqli_query($connect, $sql);
+      if (mysqli_num_rows($resultado) == 1) {
+        $dados = mysqli_fetch_array($resultado);
+        mysqli_close($connect);
+        $_SESSION['logado'] = true;
+        $_SESSION['idUsuario'] = $dados['idUsuario'];
+        header('Location: View/home.php');
+      } else {
+        $erros[] = "Usuário e senha não conferem!";
+      }
+    }else {
+      $erros[] = "Usuário inexistente!";
+    }
+  }
+}
 
 ?>
 <!DOCTYPE html>
@@ -84,7 +112,7 @@ include_once 'Includes/mensagem.php';
     <div class="row">
       <h4 class="center light">Mercearia São José</h4>
     </div>
-    <form class="" action="View/home.php" method="POST">
+    <form class="" action=" <?php echo $_SERVER['PHP_SELF']; ?> " method="POST">
       <div class="row">
         <div class="col s10 offset-s1">
           <input placeholder="E-Mail" type="email" class="validate" name="email">
@@ -95,6 +123,13 @@ include_once 'Includes/mensagem.php';
         <button type="submit" name="btn-entrar" class="btn col s10 offset-s1 indigo">Entrar</button>
       </div>
     </form>
+    <?php
+      if (!empty($erros)) {
+        foreach ($erros as $erro) {
+          echo $erro;
+        }
+      }
+     ?>
   </div>
 </div>
 
