@@ -24,7 +24,8 @@ if (isset($_POST['btn-entrar'])) {
         mysqli_close($connect);
         $_SESSION['logado'] = true;
         $_SESSION['idUsuario'] = $dados['idUsuario'];
-        header('Location: View/home.php');
+        $id = $dados['idUsuario'];
+        header('Location: View/paginaCliente.php?id='.$id);
       } else {
         $erros[] = "Usuário e senha não conferem!";
       }
@@ -124,7 +125,7 @@ if (isset($_POST['btn-entrar'])) {
       </div>
     </form>
     <div class="row center-align">
-      <a href="login.php" class="blue-text">Voltar</a>
+      <a href="login.php" class="indigo-text">Voltar</a>
     </div>
     <?php
       if (!empty($erros)) {
