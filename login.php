@@ -11,7 +11,7 @@ if (isset($_POST['btn-entrar'])) {
   $senha = mysqli_escape_string($connect, $_POST['senha']);
 
   if (empty($email) or empty($senha)) {
-    $erros[] ="<div class='col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3 orange'>O Campo login/senha precisa ser preenchido!</div>";
+    $erros[] ="<div class='col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3 orange center-align'>O Campo login/senha precisa ser preenchido!</div>";
   }else{
     $sql = "SELECT email FROM usuario WHERE email = '$email'";
     $resultado = mysqli_query($connect, $sql);
@@ -26,10 +26,10 @@ if (isset($_POST['btn-entrar'])) {
         $_SESSION['idUsuario'] = $dados['idUsuario'];
         header('Location: View/home.php');
       } else {
-        $erros[] = "Usuário e senha não conferem!";
+        $erros[] = "<div class='col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3 yellow center-align'>Usuário e Senha não conferem</div>";
       }
     }else {
-      $erros[] = "Usuário inexistente!";
+      $erros[] = "<div class='col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3 red center-align'>Usuário inexistente!</div>";
     }
   }
 }

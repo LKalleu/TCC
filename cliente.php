@@ -11,7 +11,7 @@ if (isset($_POST['btn-entrar'])) {
   $senha = mysqli_escape_string($connect, $_POST['senha']);
 
   if (empty($email) or empty($senha)) {
-    $erros[] ="O Campo login/senha precisa ser preenchido!";
+    $erros[] ="<div class='col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3 orange center-align'>O Campo login/senha precisa ser preenchido!</div>";
   }else{
     $sql = "SELECT email FROM usuario WHERE email = '$email'";
     $resultado = mysqli_query($connect, $sql);
@@ -27,10 +27,10 @@ if (isset($_POST['btn-entrar'])) {
         $id = $dados['idUsuario'];
         header('Location: View/paginaCliente.php?id='.$id);
       } else {
-        $erros[] = "Usuário e senha não conferem!";
+        $erros[] = "<div class='col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3 yellow center-align'>Usuário e Senha não conferem</div>";
       }
     }else {
-      $erros[] = "Usuário inexistente!";
+      $erros[] = "<div class='col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3 red center-align'>Usuário inexistente!</div>";
     }
   }
 }
@@ -127,14 +127,14 @@ if (isset($_POST['btn-entrar'])) {
     <div class="row center-align">
       <a href="login.php" class="indigo-text">Voltar</a>
     </div>
-    <?php
-      if (!empty($erros)) {
-        foreach ($erros as $erro) {
-          echo $erro;
-        }
-      }
-     ?>
   </div>
+  <?php
+    if (!empty($erros)) {
+      foreach ($erros as $erro) {
+        echo $erro;
+      }
+    }
+   ?>
 </div>
 
   <div class="wave" style="z-index: -1">
