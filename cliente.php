@@ -11,7 +11,7 @@ if (isset($_POST['btn-entrar'])) {
   $senha = mysqli_escape_string($connect, $_POST['senha']);
 
   if (empty($email) or empty($senha)) {
-    $erros[] ="<div class='col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3 orange'>O Campo login/senha precisa ser preenchido!</div>";
+    $erros[] ="O Campo login/senha precisa ser preenchido!";
   }else{
     $sql = "SELECT email FROM usuario WHERE email = '$email'";
     $resultado = mysqli_query($connect, $sql);
@@ -105,12 +105,12 @@ if (isset($_POST['btn-entrar'])) {
     }
     </style>
   </head>
-  <body  class="area indigo">
+  <body  class="area blue">
 
 <div class="row" style="z-index: 2">
-  <div class=" white col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3" style="margin-top: 120px">
+  <div class=" white col s10 offset-s1 m6 offset-m3 l4 offset-l4 z-depth-3" style="margin-top: 160px">
     <div class="row">
-      <h4 class="center light">Mercearia São José - Administrador</h4>
+      <h4 class="center light">Mercearia São José - Cliente</h4>
     </div>
     <form class="" action=" <?php echo $_SERVER['PHP_SELF']; ?> " method="POST">
       <div class="row">
@@ -124,16 +124,16 @@ if (isset($_POST['btn-entrar'])) {
       </div>
     </form>
     <div class="row center-align">
-      <a href="cliente.php" class="blue-text">Cliente? Clique aqui!</a>
+      <a href="login.php" class="blue-text">Voltar</a>
     </div>
-  </div>
-  <?php
-    if (!empty($erros)) {
-      foreach ($erros as $erro) {
-        echo $erro;
+    <?php
+      if (!empty($erros)) {
+        foreach ($erros as $erro) {
+          echo $erro;
+        }
       }
-    }
-   ?>
+     ?>
+  </div>
 </div>
 
   <div class="wave" style="z-index: -1">
