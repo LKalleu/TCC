@@ -16,14 +16,14 @@ include_once '../Includes/mensagem.php';
   <div class="modal-content">
     <h4 class="light center">Cadastrar Produto</h4>
     <div class="row">
-      <form class="col s12" action="" method="POST">
+      <form class="col s12" action="../Controller/cadastrarProduto.php" method="POST">
         <div class="row">
           <div class="input-field col s12 m6">
             <input type="text" id="nome" name="nome">
             <label for="nome">Nome</label>
           </div>
           <div class="input-field col s12 m6">
-            <select>
+            <select name="categoria">
               <option value="" disabled selected>Escolha o tipo de produto</option>
               <?php
               $sql = "SELECT * FROM categoria";
@@ -47,7 +47,7 @@ include_once '../Includes/mensagem.php';
     </div>
   </div>
   <div class="modal-footer">
-    <button type="submit" class="btn-flat blue-text" name="btn-inserirProduto">Atualizar</button>
+    <button type="submit" class="btn-flat blue-text" name="btn-inserirProduto">Cadastrar</button>
     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
   </div>
   </form>
@@ -115,10 +115,32 @@ include_once '../Includes/mensagem.php';
       <?php endwhile; ?>
       </tbody>
     </table>
+    <br>
+    <a href="#tipo" class="purple darken-3 btn modal-trigger"> Cadastrar Nova Categoria </a>
   </div>
 </div>
 
 
+
+<div id="tipo" class="modal">
+  <div class="modal-content">
+    <h4 class="light center">Cadastrar nova categoria</h4>
+    <div class="row">
+      <form class="col s12" action="../Controller/categoria.php" method="POST">
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" id="categoria" name="categoria">
+            <label for="categoria">Categoria</label>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn-flat blue-text" name="btn-cadastrar">Cadastrar</button>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+  </div>
+  </form>
+</div>
 
 
 <?php

@@ -37,13 +37,22 @@ include_once '../Includes/mensagem.php';
     <div class="row">
       <form class="col s12" action="" method="POST">
         <div class="row">
-          <div class="input-field col s12">
+          <div class="input-field col s12 m6">
             <input placeholder="00/00/0000" id="data" type="text" name="data" class="validate">
             <label for="data">Data de Recebimento</label>
           </div>
-          <div class="input-field col s12">
-            <input placeholder="Digite o nome do fornecedor" id="fornecedor" type="text" name="fornecedor" class="validate">
-            <label for="fornecedor">Fornecedor</label>
+          <div class="input-field col s12 m6">
+            <select name="fornecedor">
+              <option value="" disabled selected>Escolha o Fornecedor</option>
+              <?php
+              $sql = "SELECT * FROM fornecedor";
+              $resultado = mysqli_query($connect, $sql);
+              while ($categoria = mysqli_fetch_assoc($resultado)) {
+                ?>
+              <option value="<?php echo $categoria['idFornecedor'] ?>"><?php echo $categoria['nome'] ?></option>
+                <?php }; ?>
+            </select>
+            <label>Fornecedor</label>
           </div>
           <div class="input-field col s12">
             <input placeholder="Digite a quantidade de itens" id="quantidade" type="text" name="quantidade" class="validate">

@@ -36,6 +36,11 @@
     });
 
     $(document).ready(function(){
+      var $data = $("#data");
+      $data.mask('00/00/0000');
+    });
+
+    $(document).ready(function(){
       var $preco = $("#preco");
       $preco.mask('#.##0,00', {reverse: true});
     });
