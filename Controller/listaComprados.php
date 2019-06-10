@@ -26,6 +26,10 @@ if (isset($_GET['id'])) {
 }
  ?>
 
+<div class="row">
+
+</div>
+
 <!-- TABELA DE DÍVIDAS -->
 <br>
 <div class="row">
@@ -54,6 +58,16 @@ if (isset($_GET['id'])) {
           </tr>
         <?php endwhile; ?>
       </tbody>
+      <tfoot>
+        <tr>
+          Endereço:
+            <?php echo $dados2['rua'] ?>
+            <?php echo "|"; ?>
+            <?php echo $dados2['bairro'] ?>
+            <?php echo "|"; ?>
+            <?php echo $dados2['numeracao'] ?>
+        </tr>
+      </tfoot>
     </table>
     <br>
     <a href="../View/devedores.php" class="btn green" name="">Lista de Clientes</a>
